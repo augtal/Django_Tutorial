@@ -9,6 +9,10 @@
 <link rel="stylesheet" href="{% static 'meetups/styles/meetup-detail.css' %}">
 {% endblock site_css %}
 
+{% block main_heading %}
+{{ meetup_title }}
+{% endblock main_heading %}
+
 {% block body %}
 <article>
     <img src="" alt="">
