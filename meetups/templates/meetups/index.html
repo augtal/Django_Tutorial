@@ -12,7 +12,7 @@
     </head>
     <body>
         <header id="main-header">
-            <nav><a href="/meetups" id="main-logo">DjangoMeetups</a></nav>
+            <nav><a href="{% url 'meetups-all' %}" id="main-logo">DjangoMeetups</a></nav>
             <h1>We got great meetups coming up</h1>
             <p> Find the one that best suits your needs! </p>
         </header>
@@ -32,7 +32,7 @@
                                     <address>{{ meetups_item.location }}</address>
                                 </div>
                                 <div class="meetup-actions">
-                                    <a href="" class="btn">More details</a>
+                                    <a href="{% url 'meetups-details' meetups_item.slug %}" class="btn">More details</a>
                                 </div>
                             </div>
                         </article>
