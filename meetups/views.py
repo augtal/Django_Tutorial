@@ -18,6 +18,7 @@ def meetup_details(request, meetup_slug):
         selected_meetup = Meetup.objects.get(slug=meetup_slug)
         if request.method == 'GET':
             registration_form = RegistrationForm()
+        
         else:
             registration_form = RegistrationForm(request.POST)
             if registration_form.is_valid():
@@ -31,7 +32,8 @@ def meetup_details(request, meetup_slug):
                 'meetup_found': True,
                 'meetup': selected_meetup,
                 'form': registration_form
-            })
+        })
+        
     except Exception as e:
         return render(request, 'meetups/meetup-detail.html', {
             'meetup_found': False
